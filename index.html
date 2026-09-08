@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Nest Poultry Farm — Farm Fresh Eggs & Chicken</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">
+      <div class="brand-mark">GN</div>
+      Golden Nest
+    </div>
+    <div class="nav-links">
+      <a href="#about">Our Story</a>
+      <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit &amp; Contact</a>
+    </div>
+    <button class="cart-btn" onclick="openCart()">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-scrim"></div>
+  <div class="wrap hero-inner">
+    <div class="stamp">Est. Family Farm · Golden Nest Poultry</div>
+    <h1>Fresh from the farm,<br><em>straight</em> to your table.</h1>
+    <p class="sub">Golden Nest Poultry Farm run by professional farmers committed to quality and we make sure every chicken is raised by full care.</p>
+    <div class="hero-cta">
+      <a href="#products" class="btn btn-primary">Order Now</a>
+      <a href="#visit" class="btn btn-ghost">Get Directions</a>
+    </div>
+  </div>
+  <div class="ticker">Collected this morning<b>1000 eggs</b></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <video autoplay loop muted><source src="white%20leghorn%20BV300%20%23poultryfarm%20%23Egg%20pH%3D8700949981.mp4" type="video/mp4"></video>
+      <div class="tag">📍 On our farm, this week</div>
+    </div>
+    <div class="about">
+      <div class="eyebrow">Our Story</div>
+      <h2>Run by my father, grown as a family.</h2>
+      <p>Golden Nest Poultry Farm started as one man's small coop and grew into a working egg and chicken farm through years of early mornings and hands-on care. It's still run the same way today — by family, for the local community.</p>
+      <p>Every bird is free to roam, every egg is collected by hand, and every order is packed the same day it's picked up or delivered. That's the whole philosophy: keep it honest, keep it fresh.</p>
+      <div class="stat-row">
+        <div class="stat"><b>1500+</b><span>Laying Hens</span></div>
+        <div class="stat"><b>Daily</b><span>Egg Collection</span></div>
+        <div class="stat"><b>100%</b><span>Free Range</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="products">
+  <div class="wrap">
+    <div class="eyebrow">Farm Shop</div>
+    <h2>Today's carton.</h2>
+    <p>Pick what you need, add it to your cart, and send your order straight to us on WhatsApp — no account, no hassle.</p>
+
+    <div class="carton">
+      <div class="cell">
+        <div class="dome"><img src="1290249-rpl-1.jpg" alt="Dozen farm eggs"></div>
+        <h3>Farm Eggs — Dozen</h3>
+        <div class="desc">12 fresh eggs, collected within 24 hours.</div>
+        <div class="price-row"><span class="price">Rs. 360</span><span class="unit">/ dozen</span></div>
+        <div class="qty-add">
+          <div class="qty-stepper">
+            <button onclick="changeQty('eggs-dozen',-1)">−</button>
+            <span id="qty-eggs-dozen">1</span>
+            <button onclick="changeQty('eggs-dozen',1)">+</button>
+          </div>
+          <button class="add-btn" onclick="addToCart('eggs-dozen','Farm Eggs — Dozen',400)">Add</button>
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="dome"><img src="1290246-rpl-2.jpg" alt="Half dozen farm eggs"></div>
+        <h3>Farm Eggs — Half Dozen</h3>
+        <div class="desc">6 fresh eggs, perfect for small households.</div>
+        <div class="price-row"><span class="price">Rs. 180</span><span class="unit">/ 6 pcs</span></div>
+        <div class="qty-add">
+          <div class="qty-stepper">
+            <button onclick="changeQty('eggs-half',-1)">−</button>
+            <span id="qty-eggs-half">1</span>
+            <button onclick="changeQty('eggs-half',1)">+</button>
+          </div>
+          <button class="add-btn" onclick="addToCart('eggs-half','Farm Eggs — Half Dozen',210)">Add</button>
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="dome"><img src="bd01c1a9-28c9-4439-9a0b-35a361ddecf4.png" alt="Live free-range chicken"></div>
+        <h3>Live Chicken</h3>
+        <div class="desc">Healthy free-range bird, sold by weight.</div>
+        <div class="price-row"><span class="price">Rs. 600</span><span class="unit">/ kg</span></div>
+        <div class="qty-add">
+          <div class="qty-stepper">
+            <button onclick="changeQty('chicken-live',-1)">−</button>
+            <span id="qty-chicken-live">1</span>
+            <button onclick="changeQty('chicken-live',1)">+</button>
+          </div>
+          <button class="add-btn" onclick="addToCart('chicken-live','Live Chicken (per kg)',600)">Add</button>
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="dome"><img src="download.jfif" alt="Dressed chicken meat"></div>
+        <h3>Dressed Chicken</h3>
+        <div class="desc">Cleaned and cut to order, ready to cook.</div>
+        <div class="price-row"><span class="price">Rs. 650</span><span class="unit">/ kg</span></div>
+        <div class="qty-add">
+          <div class="qty-stepper">
+            <button onclick="changeQty('chicken-dressed',-1)">−</button>
+            <span id="qty-chicken-dressed">1</span>
+            <button onclick="changeQty('chicken-dressed',1)">+</button>
+          </div>
+          <button class="add-btn" onclick="addToCart('chicken-dressed','Dressed Chicken (per kg)',650)">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="eyebrow">Around the Farm</div>
+    <h2 style="font-size:clamp(28px,4vw,40px); margin-bottom:28px;">A look at where it all happens.</h2>
+    <div class="gallery-grid">
+      <a href="1.jpg" target="_blank" rel="noopener">
+        <img src="1.jpg" alt="Chickens inside the barn">
+      </a>
+      <a class="g-small" href="2.jpg" target="_blank" rel="noopener">
+        <img src="2.jpg" alt="Hens roaming the farmyard">
+      </a>
+      <a class="g-small" href="3.jpg" target="_blank" rel="noopener">
+        <img src="3.jpg" alt="Close-up of free-range chickens">
+      </a>
+      <a class="g-small" href="4.jpg" target="_blank" rel="noopener">
+        <img src="4.jpg" alt="Hens inside the coop">
+      </a>
+      <a class="g-small" href="5.jpg" target="_blank" rel="noopener">
+        <img src="5.jpg" alt="Brown chicken portrait">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT / MAP / CONTACT -->
+<section id="visit" class="visit">
+  <div class="wrap">
+    <div class="eyebrow">Visit &amp; Contact</div>
+    <h2>Come see the farm yourself.</h2>
+    <div class="visit-grid">
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=25.0275723,66.7181116&output=embed" loading="lazy" allowfullscreen title="Golden Nest Poultry Farm location"></iframe>
+      </div>
+      <div>
+        <ul class="contact-list">
+          <li>
+            <div class="ico">📍</div>
+            <div>
+              <div class="label">Location</div>
+              <a class="value" href="https://www.google.com/maps/dir/?api=1&destination=25.0275723,66.7181116" target="_blank" rel="noopener">Get Directions →</a>
+            </div>
+          </li>
+          <li>
+            <div class="ico">📞</div>
+            <div>
+              <div class="label">Phone</div>
+              <a class="value" href="tel:+923419679817">0341 9679817</a>
+            </div>
+          </li>
+          <li>
+            <div class="ico">✉️</div>
+            <div>
+              <div class="label">Email</div>
+              <a class="value" href="mailto:arslankhan727711@gmail.com">arslankhan727711@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <div class="ico">💬</div>
+            <div>
+              <div class="label">Order on WhatsApp</div>
+              <a class="value" href="https://wa.me/923419679817" target="_blank" rel="noopener">Message us directly →</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><b>Golden Nest Poultry Farm</b> — farm fresh eggs &amp; chicken. Built for an academy front-end assignment.</div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>Your Cart</h3>
+    <button onclick="closeAll()">×</button>
+  </div>
+  <div class="drawer-body" id="drawerBody">
+    <div class="drawer-empty">Your cart is empty. Add some fresh eggs 🥚</div>
+  </div>
+  <div class="drawer-foot">
+    <div class="total-row"><span>Total</span><span id="cartTotal">Rs. 0</span></div>
+    <button class="btn btn-primary" onclick="openCheckout()">Checkout</button>
+    <div class="drawer-note">You'll confirm your order via WhatsApp before it's placed.</div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkoutOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeCheckout()">×</button>
+    <h3>Almost there</h3>
+    <p class="hint">Fill this in and we'll open WhatsApp with your order ready to send.</p>
+    <div class="field"><label>Full Name</label><input type="text" id="custName" placeholder="Your name"></div>
+    <div class="field"><label>Phone Number</label><input type="text" id="custPhone" placeholder="03XX XXXXXXX"></div>
+    <div class="field"><label>Delivery Address / Pickup Note</label><textarea id="custAddress" placeholder="Where should we deliver, or note if you'll pick up"></textarea></div>
+    <button class="btn btn-primary" onclick="sendOrder()">Send Order via WhatsApp</button>
+  </div>
+</div>
+
+<script>
+  const cart = {}; // id -> {name, price, qty}
+  const qtyState = {};
+
+  function changeQty(id, delta){
+    const current = qtyState[id] || 1;
+    const next = Math.max(1, current + delta);
+    qtyState[id] = next;
+    document.getElementById('qty-' + id).textContent = next;
+  }
+
+  function addToCart(id, name, price){
+    const qty = qtyState[id] || 1;
+    if(cart[id]){
+      cart[id].qty += qty;
+    } else {
+      cart[id] = { name, price, qty };
+    }
+    renderCart();
+    openCart();
+  }
+
+  function removeFromCart(id){
+    delete cart[id];
+    renderCart();
+  }
+
+  function cartItemQty(id, delta){
+    if(!cart[id]) return;
+    cart[id].qty = Math.max(1, cart[id].qty + delta);
+    renderCart();
+  }
+
+  function renderCart(){
+    const body = document.getElementById('drawerBody');
+    const ids = Object.keys(cart);
+    let total = 0;
+    let count = 0;
+
+    if(ids.length === 0){
+      body.innerHTML = '<div class="drawer-empty">Your cart is empty. Add some fresh eggs 🥚</div>';
+    } else {
+      body.innerHTML = ids.map(id => {
+        const item = cart[id];
+        total += item.price * item.qty;
+        count += item.qty;
+        return `
+          <div class="cart-item">
+            <div class="ci-info">
+              <h4>${item.name}</h4>
+              <div class="ci-price">Rs. ${item.price} × ${item.qty} = Rs. ${item.price * item.qty}</div>
+              <div class="ci-controls">
+                <button onclick="cartItemQty('${id}',-1)">−</button>
+                <span class="mono">${item.qty}</span>
+                <button onclick="cartItemQty('${id}',1)">+</button>
+              </div>
+              <button class="remove" onclick="removeFromCart('${id}')">Remove</button>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    Object.keys(cart).forEach(id => count += 0); // no-op safeguard
+    count = ids.reduce((sum,id) => sum + cart[id].qty, 0);
+
+    document.getElementById('cartTotal').textContent = 'Rs. ' + total;
+    document.getElementById('cartCount').textContent = count;
+  }
+
+  function openCart(){
+    document.getElementById('drawer').classList.add('open');
+    document.getElementById('overlay').classList.add('open');
+  }
+  function closeAll(){
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('overlay').classList.remove('open');
+  }
+
+  function openCheckout(){
+    if(Object.keys(cart).length === 0){ alert('Your cart is empty — add a product first.'); return; }
+    document.getElementById('checkoutOverlay').classList.add('open');
+  }
+  function closeCheckout(){
+    document.getElementById('checkoutOverlay').classList.remove('open');
+  }
+
+  function sendOrder(){
+    const name = document.getElementById('custName').value.trim();
+    const phone = document.getElementById('custPhone').value.trim();
+    const address = document.getElementById('custAddress').value.trim();
+
+    if(!name || !phone){
+      alert('Please enter your name and phone number.');
+      return;
+    }
+
+    let msg = `Hello Golden Nest Poultry Farm, I'd like to place an order:%0A%0A`;
+    let total = 0;
+    Object.values(cart).forEach(item => {
+      msg += `• ${item.name} x${item.qty} — Rs. ${item.price * item.qty}%0A`;
+      total += item.price * item.qty;
+    });
+    msg += `%0ATotal: Rs. ${total}%0A%0AName: ${name}%0APhone: ${phone}%0AAddress/Note: ${address || '-'}`;
+
+    window.open(`https://wa.me/923419679817?text=${msg}`, '_blank');
+    closeCheckout();
+    closeAll();
+  }
+</script>
+
+</body>
+</html>
